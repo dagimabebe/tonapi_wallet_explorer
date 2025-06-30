@@ -1,31 +1,54 @@
-TONAPI Wallet Explorer
-A simple Ruby tool to generate crypto tax reports by processing wallet transactions and fetching historical USD prices (FMV) for each transaction date.
+# TONAPI Wallet Explorer
+is a simple Ruby tool that helps you generate crypto tax reports by processing your wallet transactions and fetching historical USD fair market values (FMV) for each transaction date.
 
-What It Does
-Reads your wallet transactions from a CSV file.
+---
 
-Fetches historical fair market values (FMV) in USD for each cryptocurrency on the transaction date using CoinGecko API.
+🔍 What It Does
 
-Generates a CSV report combining your transactions with their USD values, ready for tax reporting.
+* Reads your wallet transactions from a CSV file.
+* Fetches historical USD prices (FMV) for each cryptocurrency on the transaction date using the CoinGecko API.
+* Generates a clean, tax-ready CSV report that includes your original transactions along with their corresponding USD values.
 
-How to Use — Step by Step
-Prepare your transactions file
-Create a CSV file (e.g., transactions.csv) with your wallet transactions including columns: date, type, amount, currency, txid.
+---
 
-Install dependencies
+🚀 How to Use — Step by Step
 
-Run this command to install required Ruby gems:
+1. Prepare Your Transactions File
 
+Create a CSV file (e.g., `transactions.csv`) containing your wallet transactions with the following columns:
+
+```
+date,type,amount,currency,txid
+```
+
+2. Install Dependencies
+
+Run the following command to install the required Ruby gems:
+
+```bash
 bundle install
+```
 
-Run the tool
+3. Run the Tool
 
-Execute the script with your input and desired output filenames:
+Execute the script by specifying your input and output filenames:
 
+```
 bundle exec ruby bin/run.rb transactions.csv tax_report.csv
+```
 
-Check the output
-Your tax report will be saved as tax_report.csv (or your specified output file), containing your transactions enriched with USD fair market values for each date.
+4. Check the Output
 
-Use your report
-Use the generated CSV to help calculate your crypto capital gains and losses for tax filing.
+Your tax report will be saved as `tax_report.csv` (or the output file name you provided), with each transaction enriched with its USD fair market value on the transaction date.
+
+5. Use the Report
+
+Use the generated CSV to calculate your crypto capital gains and losses when filing your taxes.
+
+---
+
+📌 Notes
+
+Make sure your CSV file is correctly formatted and uses valid cryptocurrency tickers.
+The tool uses the [CoinGecko API](https://www.coingecko.com/en/api) for price data, so ensure you have a stable internet connection while running it.
+
