@@ -1,0 +1,4 @@
+date,type,amount,currency,txid
+2023-01-15,receive,10,TON,tx123abc
+2023-02-20,send,0.5,BTC,tx456def
+2023-03-05,receive,2,ETH,tx789ghi
